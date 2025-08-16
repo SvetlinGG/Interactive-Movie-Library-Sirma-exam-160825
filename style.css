@@ -1,0 +1,38 @@
+:root {
+    --font-base: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: url('https://images3.alphacoders.com/114/thumb-1920-11439.png')
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid white;
+    gap: 20px;
+}
+h1 {
+    color: red;
+    font-family: var(--font-base);
+}
+.clear {
+    height: 3em;
+    width: 10em;
+    background-color: black;
+    color: red;
+    border-radius: 7px;
+}
+
+.material-symbols-outlined {
+  color: white;
+  background-color: red;
+  margin-left: 50px;
+  border: 1px solid white;
+  height: 30px;
+  width: 35px;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 5px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
