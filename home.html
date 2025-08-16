@@ -15,19 +15,62 @@
                 <h1>Interactive Movie Library</h1>
             </div>
             <div class="second">
-                <button class="clear">Clear Favorites</button>
+                <button id="clearFavsBtn" class="clear">Clear Favorites</button>
             </div>
             
         </div>
-        <div class="search">
+        <!-- <div class="search">
             <input class="input" type="text" placeholder="  movie name ....">
             <button class="search-btn">Search</button>
             <button class="learn">Learn More</button>
-        </div>
+        </div> -->
+        <form id="searchForm" class="search" autocomplete="off">
+            <input id="q" class="input" type="text" placeholder="  movie name …" required />
+            <button id="searchBtn" class="search-btn" type="submit">Search</button>
+            <button id="helpBtn" class="learn" type="button">Learn More</button>
+          </form>
         <div class="result">
-            <button class="result-btn">Result</button>
-            <button class="favorites-btn">Favorites</button>
+            <button id="showResultsBtn" class="result-btn" type="button">Result</button>
+            <button id="showFavsBtn" class="favorites-btn" type="button">Favorites</button>
         </div>
     </div>
+
+
+    <main class="wrap">
+        <section id="resultsGrid" class="grid" aria-live="polite"></section>
+    
+        <nav id="pager" class="pager" hidden>
+          <button id="prevBtn" type="button" aria-label="Предишна страница">‹ Prev</button>
+          <span id="pageInfo"></span>
+          <button id="nextBtn" type="button" aria-label="Следваща страница">Next ›</button>
+        </nav>
+    
+        <section id="favoritesView" hidden>
+          <h2>Favorites</h2>
+          <ul id="favList" class="fav-list"></ul>
+        </section>
+      </main>
+    
+      <dialog id="modal">
+        <article id="modalContent"></article>
+        <form method="dialog"><button>Close</button></form>
+      </dialog>
+    
+      <template id="cardTpl">
+        <article class="card">
+          <img class="poster" alt="">
+          <div class="meta">
+            <h3 class="title"></h3>
+            <p class="sub"></p>
+          </div>
+          <div class="actions">
+            <button class="details" type="button">Details</button>
+            <button class="fav" type="button" aria-pressed="false" title="Add to favorites">☆</button>
+          </div>
+        </article>
+      </template>
+    
+      <script type="module" src="./src/app.js" defer></script>
+    
 </body>
 </html>
