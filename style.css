@@ -7,13 +7,18 @@ body {
 }
 .logo {
     display: flex;
+    gap: 70em;
+    
+}
+.first, .second {
+    display: flex;
     flex-direction: row;
     align-items: center;
-    border: 1px solid white;
     gap: 20px;
 }
+
 h1 {
-    color: red;
+    color: rgb(156, 42, 42);
     font-family: var(--font-base);
 }
 .clear {
@@ -22,12 +27,14 @@ h1 {
     background-color: black;
     color: red;
     border-radius: 7px;
+    cursor: pointer;
+    
 }
 
 .material-symbols-outlined {
   color: white;
   background-color: red;
-  margin-left: 50px;
+  margin-left: 2em;
   border: 1px solid white;
   height: 30px;
   width: 35px;
@@ -35,4 +42,19 @@ h1 {
   border-radius: 5px;
   padding-top: 5px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    gap: 5px;
+    height: 4em;
+}
+.input {
+    margin-left: 3em;
+    width: 60em;
+    height: 2em;
+    background-color: rgb(157, 152, 152);
+    border-radius: 7px;
 }
