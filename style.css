@@ -21,7 +21,7 @@ h1 {
     color: rgb(156, 42, 42);
     font-family: var(--font-base);
 }
-.clear, .search-btn, .learn{
+.clear, .search-btn, .learn, .result-btn, .favorites-btn{
     height: 3em;
     width: 10em;
     background-color: black;
@@ -57,4 +57,10 @@ h1 {
     background-color: black;
     border-radius: 7px;
     color: aliceblue;
+}
+.result {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2.6em;
+    gap: 5px;
 }
