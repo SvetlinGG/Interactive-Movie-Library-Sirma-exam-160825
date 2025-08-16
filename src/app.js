@@ -33,3 +33,23 @@ function loadFavs(){
         return [];
     }
 }
+function saveFavs(){
+    localStorage.setItem('favorites', JSON.stringify(state.favs));
+}
+
+function isFav(id){
+    return state.favs.some(f => f.imdbID === id)
+}
+function addFav(movie){
+    if(!isFav(movie.imdbID)){
+        state.favs.push({
+            imdbID: movie.imdbID,
+            title: movie.Title,
+            year: movie.Year,
+            poster: movie.Poster,
+            type: movie.Type,
+        });
+        saveFavs();
+    }
+}
+
