@@ -19,3 +19,17 @@ const el = {
     modalContent: document.getElementById('modalContent'),
 };
 
+const state = {
+    q: '',
+    page: 1,
+    total: 0,
+    mode: 'result',
+    favs: loadFavs(),
+}
+function loadFavs(){
+    try {
+        return JSON.parse(localStorage.getItem('favorites') || '[]');
+    } catch{
+        return [];
+    }
+}
