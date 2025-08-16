@@ -1,5 +1,5 @@
 const API_URL = 'https://www.omdbapi.com/';
-const API_KEY = 'YOUR_OMDB_KEY'; // вземи безплатен ключ от omdbapi.com и го постави тук
+const API_KEY = 'eb32f878'; 
 
 async function fetchJSON(params){
   const qs = new URLSearchParams({ apikey: API_KEY, ...params });
