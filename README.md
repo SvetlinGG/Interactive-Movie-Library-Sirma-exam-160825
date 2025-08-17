@@ -31,3 +31,28 @@ Create a free key at https://www.omdbapi.com/apikey.aspx and activate it via the
 3) Run locally (no build needed)
 
 VS Code: install Live Server → “Open with Live Server”
+
+HOW IT WORKS:
+
+Search
+
+1. Потребителят въвежда заглавие (напр. “Matrix”) и натиска Search (или Enter).
+
+2. JS прихваща събитието submit на формата, взима стойността (q), нулира страницата на 1
+
+
+
+
+3. searchMovies прави fetch към https://www.omdbapi.com/?apikey=...&s=<q>&page=<n>
+
+Ако Response:"False" → хвърля грешка (показва се съобщение в UI).
+
+Ако е успешно → връща Search: [] и totalResults.
+
+4. UI:
+
+Показва съобщение „Loading…“ докато чака отговора.
+
+Заменя съдържанието на #resultsGrid с карти, генерирани от темплейта (cardTpl).
+
+Изчислява общите страници: Math.ceil(totalResults/10) и активира пагинацията.
