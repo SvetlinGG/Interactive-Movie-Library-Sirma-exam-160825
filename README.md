@@ -21,10 +21,13 @@ Features
 
 ⚠️ Empty/error states (no input, API errors, missing posters)
 
-Project structure
-.
-├── index.html
-├── style.css
-└── src/
-    ├── app.js        # UI logic, rendering, events, pagination, favorites
-    └── api.js        # Thin OMDb wrapper (fetch + error handling)
+Getting started:
+1) Obtain an OMDb API key
+
+Create a free key at https://www.omdbapi.com/apikey.aspx and activate it via the email they send.
+
+2) Configure the key
+
+3) Run locally (no build needed)
+
+VS Code: install Live Server → “Open with Live Server”
