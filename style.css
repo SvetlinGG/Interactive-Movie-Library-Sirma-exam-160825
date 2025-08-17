@@ -103,9 +103,7 @@ button:hover{filter:brightness(1.06)}
     :root { --radius: 14px; }
   
     body{
-        /* background-image: url(/public/dart_vader.png);
-        background-size: 100vw auto;
-        background-size: 100vh auto; */
+        background-image: url(/public/dart_vader.png);
         background-position: center center !important;
         background-size: cover !important;
         background-repeat: no-repeat !important;
