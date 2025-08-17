@@ -188,12 +188,12 @@ button:hover{filter:brightness(1.06)}
 
   
 @media (max-width: 600px) {
-    /* Make the dialog behave like a full-screen sheet on phones */
+    
     dialog#modal{
       width: 100vw;
       height: 100dvh;
       margin: 0;
-      padding: 0;               /* we’ll pad the inner content instead */
+      padding: 0;             
       border: none;
       border-radius: 0;
       background: var(--bg, #0f1115);
@@ -203,20 +203,20 @@ button:hover{filter:brightness(1.06)}
     }
     dialog#modal::backdrop{ background: rgba(0,0,0,.6); }
   
-    /* Scrollable content area */
+   
     #modal article{
       padding: 16px;
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
   
-    /* Poster on mobile: centered, tidy ratio, shadow */
+    
     #modal article img{
       display: block;
       margin: 0 auto 12px;
-      width: 46vw;               /* responsive width */
+      width: 46vw;               
       max-width: 240px;
-      aspect-ratio: 2 / 3;       /* keeps poster shape if no size attrs */
+      aspect-ratio: 2 / 3;       
       height: auto;
       object-fit: cover;
       border-radius: 12px;
@@ -224,7 +224,7 @@ button:hover{filter:brightness(1.06)}
       box-shadow: 0 10px 24px rgba(0,0,0,.35);
     }
   
-    /* Title & meta */
+    
     #modal h3{
       font-size: 18px;
       line-height: 1.25;
@@ -241,24 +241,24 @@ button:hover{filter:brightness(1.06)}
       margin-right: 6px;
     }
   
-    /* Make long Plot readable without huge walls of text */
-    #modal p:nth-of-type(n+3){   /* typically Genre/Actors/Plot… adjust if needed */
+    
+    #modal p:nth-of-type(n+3){   
       line-height: 1.55;
     }
-    /* Optional: clamp the Plot to 6 lines by default (remove if you don’t want it) */
+   
     #modal .plot{
       display: -webkit-box;
       -webkit-line-clamp: 6;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    /* If you toggle .expanded with JS, it will show the full plot */
+    
     #modal .plot.expanded{
       -webkit-line-clamp: unset;
       max-height: none;
     }
   
-    /* Big, comfy Close button at the bottom */
+    
     #modal form button{
       width: 100%;
       padding: 12px;
@@ -271,7 +271,7 @@ button:hover{filter:brightness(1.06)}
       font-size: 15px;
     }
   
-    /* Nice chips if you later wrap Genre values in spans with class .chip */
+    
     #modal .chips{
       display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px;
     }
@@ -279,7 +279,7 @@ button:hover{filter:brightness(1.06)}
       padding: 6px 10px; border-radius: 999px; background: #1b1f27; font-size: 12px;
     }
   
-    /* Two-column stats (e.g., Rated, Runtime, IMDB) that collapse to one below 390px */
+   
     #modal .stats{
       display: grid; gap: 8px; grid-template-columns: 1fr 1fr; margin: 10px 0 14px;
     }
