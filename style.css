@@ -102,7 +102,10 @@ button:hover{filter:brightness(1.06)}
         background-image: url(/public/dart_vader.png);
         background-size: 100vw auto;
         background-size: 100vh auto;
-        /* background-position: top center; */
+        background-position: center center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+
     }
   
     .wrap { max-width: 1100px; padding: 16px; }
