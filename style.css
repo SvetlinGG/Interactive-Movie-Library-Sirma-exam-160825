@@ -96,7 +96,7 @@ button:hover{filter:brightness(1.06)}
        If it's on .header (or another element), replace the selector. */
     body {
       /* your URL here */
-      --bg-url: url("https://example.com/your-image.jpg");
+      --bg-url: url("https://images3.alphacoders.com/114/thumb-1920-11439.png");
   
       /* draw the image as a small decorative graphic */
       background-image: var(--bg-url);
