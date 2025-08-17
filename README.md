@@ -34,7 +34,7 @@ VS Code: install Live Server → “Open with Live Server”
 
 HOW IT WORKS:
 
-Search
+ Search
 
 1. Потребителят въвежда заглавие (напр. “Matrix”) и натиска Search (или Enter).
 
@@ -56,3 +56,11 @@ Search
 Заменя съдържанието на #resultsGrid с карти, генерирани от темплейта (cardTpl).
 
 Изчислява общите страници: Math.ceil(totalResults/10) и активира пагинацията.
+
+ Cards 
+
+1. Всяка карта показва Poster, Title, Year, Type и има два бутона:
+
+   - Details – отваря детайли за конкретния филм/сериал.
+
+   - ☆ / ★ (Fav) – добавя/махa от Любими.
