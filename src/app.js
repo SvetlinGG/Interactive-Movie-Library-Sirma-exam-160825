@@ -62,8 +62,16 @@ function setLoading(){
     el.resultsGrid.innerHTML = '<p>Loading...</p>';
     el.pager.hidden = true;
 }
-
 function updatePager(){
+    const totalPages = Math.ceil(state.total / 10) || 0;
+    if (state.mode !== 'results' || totalPages <= 1) { el.pager.hidden = true; return; }
+    el.pager.hidden = false;
+    el.pageInfo.textContent = `${state.page} / ${totalPages}`;
+    el.prev.disabled = state.page <= 1;
+    el.next.disabled = state.page >= totalPages;
+  }
+
+function cardFrom(movie){
     const frag = el.cardTpl.content.cloneNode(true);
     const card = frag.querySelector('.card');
     const img = frag.querySelector('.poster');
@@ -187,7 +195,7 @@ function renderFavorites(){
     renderFavorites();
   }
   
-  // Събития
+  
   el.form.addEventListener('submit', (e) => {
     e.preventDefault();
     state.q = el.q.value.trim();
@@ -212,7 +220,8 @@ function renderFavorites(){
     if (!el.modal.open) el.modal.showModal();
   });
   
-  // При първо отваряне – показваме помощ или последно търсене
+  
   state.q = '';
   el.q.value = '';
   showResultsMode();
+  window.cardFrom = cardFrom;
