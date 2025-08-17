@@ -133,7 +133,7 @@ async function openDetails(id){
     if (!el.modal.open) el.modal.showModal();
     try {
         const m = await getMovieById(id);
-        const poster = (m.Poster && m.Poster !== 'N/A') ? `<img src="${m.Poster}" alt="${m.Title}" style="max-width:160px;height:auto;float:right;margin-left:12px;border-radius:10px">` : '';
+        const poster = (m.Poster && m.Poster !== 'N/A') ? `<img src="${m.Poster}" alt="${m.Title}" style="max-width:160px;height:auto;float:right;margin-left:12px;border-radius:10px; color:white;">` : '';
         el.modalContent.innerHTML = `
             ${poster}
             <h3>${m.Title} (${m.Year})</h3>

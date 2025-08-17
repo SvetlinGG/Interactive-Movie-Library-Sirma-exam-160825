@@ -1,9 +1,9 @@
 :root {
     --font-base: Arial, Helvetica, sans-serif;
-    --bg:#0f1115; 
+    --bg: white; 
     --fg:#e8eef6; 
     --muted:#93a1b3; 
-    --card: gray;
+    --card: ;
 }
 
 body {
