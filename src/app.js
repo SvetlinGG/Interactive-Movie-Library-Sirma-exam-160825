@@ -100,3 +100,24 @@ function updatePager(){
     });
     return frag;
 }
+
+async function doSearch(){
+    if ( !state.q.trim()) {
+        el.resultsGrid.innerHTML = '<p>Enter a movie title to search.</p>';
+        el.pager.hidden = true;
+        return;
+    }
+    setLoading();
+    try {
+        const data = await searchMovies({q: state.q, page: state.page});
+        state.total = Number(data.totalResult || 0);
+        const list = data.Search || [];
+        el.resultsGrid.innerHTML = '';
+        list.forEach(m => el.resultsGrid.appendChild(cardFrom(m)));
+        updatePager();
+    } catch (err) {
+        el.resultsGrid.innerHTML = `<p role="alert">Error: ${err.message}</p>`;
+        el.pager.hidden = true;
+    }
+}
+
