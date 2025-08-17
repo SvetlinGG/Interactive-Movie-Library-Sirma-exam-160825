@@ -186,7 +186,7 @@ button:hover{filter:brightness(1.06)}
   
 
 
-  
+/*   
 @media (max-width: 600px) {
     
     dialog#modal{
@@ -287,4 +287,4 @@ button:hover{filter:brightness(1.06)}
       #modal .stats{ grid-template-columns: 1fr; }
     }
   }
-  
+   */
