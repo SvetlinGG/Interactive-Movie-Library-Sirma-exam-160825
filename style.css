@@ -90,320 +90,168 @@ button:hover{filter:brightness(1.06)}
 .fav-list{list-style:none;padding:0;margin:12px 0;display:grid;gap:8px}
 
 
-/* ===== Compact layout for <=1170px ===== */
-@media (max-width: 1170px) {
-
-    body {
-        /* your URL here */
-        --bg-url: url("https://images3.alphacoders.com/114/thumb-1920-11439.png");
-    
-        /* draw the image as a small decorative graphic */
-        background-image: var(--bg-url);
-        background-repeat: no-repeat;
-    
-        /* position it neatly (right/top on tablets & small laptops) */
-        background-position: top right clamp(8px, 3vw, 24px);
-    
-        /* key line: keep it SMALL and responsive */
-        background-size: clamp(180px, 28vw, 360px) auto;
-    
-        /* solid backdrop behind the small image */
-        background-color: #0f1115;
-      }
-    /* Layout & header */
-    .wrap { padding: 16px; }
-    .header{
-      position: sticky; top: 0; z-index: 20;
-      padding: 12px 16px;
-      background: rgba(8,10,14,.75);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .logo{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
-    .logo h1{ margin:0; font-size:22px; }
-    #clearFavsBtn.clear{ margin-left:auto; padding:10px 12px; border-radius:10px; }
+/* =========================
+   ТАБЛЕТ (ширина до 1170px)
+   ========================= */
+   @media (max-width: 1170px) and (min-width: 601px) {
+    /* по-умерени размери и празни полета */
+    :root { --radius: 14px; }
   
-    /* Search row: input + Search, Learn takes full width below */
+    /* фонът да е "по-малък" и изместен в ъгъла */
+    body{
+      background-repeat: no-repeat;
+      background-position: top right clamp(8px, 3vw, 24px);
+      background-size: clamp(220px, 25vw, 360px) auto;
+      background-color: #fff; /* бекграунд зад картинката */
+    }
+  
+    .wrap { max-width: 1100px; padding: 16px; }
+  
+    /* хедър секция */
+    .logo{
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .first, .second { gap: 12px; }
+    h1 { font-size: 22px; margin: 0; }
+  
+    /* търсене: 1 ред – input + два бутона */
     .search{
-      display:grid;
-      grid-template-columns: 1fr auto;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
       gap: 10px;
-      margin-top: 10px;
+      height: auto;
+      align-items: center;
     }
-    .learn{ grid-column: 1 / -1; } /* full width */
+    .input{
+      margin-left: 0;
+      width: 100%;
+      height: 44px;
+    }
+    .search-btn, .learn, .clear{
+      width: auto;
+      min-width: 120px;
+      height: 44px;
+      padding: 0 14px;
+      border-radius: 10px;
+    }
   
-    /* Result / Favorites toggles: 3 equal buttons */
+    /* превключватели Result/Favorites */
     .result{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      margin-left: 0;
       gap: 8px;
-      margin-top: 10px;
     }
-    .result-btn, .favorites-btn{ border-radius: 12px; }
   
-    /* Cards grid: comfy 2–4 columns depending on space */
+    /* карта/решетка – 2–4 колони според ширината */
     .grid{
-      display:grid;
-      gap: 14px;
-      margin-top: 12px;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
     }
     .card{
-      border-radius: 14px;
-      overflow: hidden;
-      display: grid;
       grid-template-rows: 260px auto auto;
-      box-shadow: 0 10px 24px rgba(0,0,0,.35);
-    }
-    .poster{ width:100%; height:100%; object-fit:cover; background:#0b0d10; }
-    .meta{ padding:10px 12px; }
-    .title{ margin:0 0 4px; font-size:18px; }
-    .sub{ margin:0; font-size:13px; }
-    .actions{ display:flex; gap:10px; padding:10px 12px; }
-    .actions .details, .actions .fav{ padding:10px 12px; border-radius:10px; }
-  
-    /* Pager */
-    #pager{ display:flex; gap:10px; justify-content:center; align-items:center; margin:16px 0; }
-    #prevBtn, #nextBtn{ min-width: 140px; }
-    #pageInfo{ font-size:13px; }
-  
-    /* Favorites view */
-    #favoritesView{ margin-top:18px; }
-    .fav-list{
-      list-style:none; padding:0; margin:0;
-      display:grid; gap:12px;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    }
-    .fav-list li{ display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:12px; }
-    .fav-list img{ width:48px; height:64px; object-fit:cover; border-radius:6px; background:#0b0d10; }
-  
-    /* Details dialog: centered panel (not full-screen yet) */
-    dialog#modal{
-      width:auto;
-      max-width: min(720px, 94vw);
-      margin: 4vh auto;
-      padding: 0;
-      border: none;
       border-radius: 14px;
-      overflow: hidden;
-      background: var(--bg, #0f1115); color: var(--fg, #e8eef6);
     }
-    dialog#modal::backdrop{ background: rgba(0,0,0,.65); }
-    #modal article{ padding:16px 18px; max-height: 70vh; overflow:auto; -webkit-overflow-scrolling:touch; }
-    #modal article img{
-      float:right; width:180px; height:auto; margin-left:12px;
-      border-radius:12px; background:#0b0d10; object-fit:cover;
-      box-shadow:0 10px 24px rgba(0,0,0,.35);
-    }
-    #modal h3{ font-size:20px; margin:0 0 8px; }
-    #modal p{ margin:8px 0; font-size:14px; }
-    #modal form{ padding:12px 16px; background: rgba(0,0,0,.35); display:flex; justify-content:flex-end; }
-    #modal form button{ min-width:160px; border-radius:12px; }
+    .poster{ object-fit: cover; }
   
-    /* Make buttons slimmer (removes thick white borders if any) */
-    .result button, .search-btn, .learn, .clear,
-    #prevBtn, #nextBtn, #modal form button{
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 6px 14px rgba(0,0,0,.35);
+    /* пагинация */
+    .pager{ gap: 10px; }
+    .next, .prev{
+      width: auto;
+      min-width: 140px;
+      height: 44px;
+      padding: 0 14px;
+      border-radius: 10px;
     }
   }
   
-
-@media (max-width: 600px) {
-    
-    .wrap { padding: 14px; }
+  /* =========================
+     ТЕЛЕФОНИ / iPhone 13 (≤600px)
+     ========================= */
+  @media (max-width: 600px) {
+    :root { --radius: 14px; }
   
-    
-    .header { position: sticky; top: 0; z-index: 10; padding: 12px 14px; }
-    .logo { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
-    .logo h1 { font-size: 18px; margin: 0; }
-    .material-symbols-outlined { font-size: 28px; }
-    .clear, #clearFavsBtn { align-self: stretch; padding: 10px 12px; border-radius: 10px; }
+    /* фонът става още по-малък и по-центриран */
+    body{
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: clamp(140px, 40vw, 220px) auto;
+      background-color: #fff;
+    }
   
-    
-    .search {
+    /* хедър в една колона */
+    .logo{
+      gap: 8px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    h1 { font-size: 18px; margin: 0; }
+  
+    .material-symbols-outlined{
+      height: 28px; width: 32px; padding-top: 4px;
+    }
+  
+    /* търсене на един стълб – всичко 100% ширина */
+    .search{
       display: grid;
       grid-template-columns: 1fr;
       gap: 8px;
-      margin-top: 10px;
+      height: auto;
+      margin-top: 8px;
     }
-    .input {
+    .input{
+      margin-left: 0;
       width: 100%;
-      padding: 12px;
-      border-radius: 12px;
+      height: 42px;
     }
-    .search-btn, .learn {
+    .search-btn, .learn, .clear{
       width: 100%;
-      padding: 12px;
-      border-radius: 12px;
+      height: 44px;
+      border-radius: 10px;
     }
   
-    
-    .result {
+    /* Result / Favorites – 2 колони */
+    .result{
+      margin-left: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
-      margin-top: 10px;
+      margin-top: 8px;
     }
-    .result-btn, .favorites-btn { padding: 12px; border-radius: 12px; }
+    .result-btn, .favorites-btn{
+      width: 100%;
+      height: 44px;
+      border-radius: 10px;
+    }
   
-    
-    .grid {
-      display: grid;
+    /* решетка: 1–2 колони */
+    .grid{
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 12px;
       margin-top: 12px;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     }
-    .card {
-      display: grid;
-      grid-template-rows: 220px auto auto; 
-      border-radius: 14px;
-      overflow: hidden;
-    }
-    .poster { height: 100%; width: 100%; object-fit: cover; }
-    .meta { padding: 10px 12px; }
-    .title { font-size: 16px; margin: 0 0 4px; }
-    .sub { font-size: 12px; margin: 0; }
-    .actions { display: flex; gap: 8px; padding: 10px 12px; }
-    .actions .details, .actions .fav { flex: 1; padding: 10px; border-radius: 10px; }
+    .card{ grid-template-rows: 220px auto auto; }
+    .title{ font-size: 16px; }
+    .sub{ font-size: 12px; }
   
-    
-    #pager {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-      margin: 14px 0;
-    }
-    #pager button { min-width: 96px; padding: 10px 14px; border-radius: 10px; }
-    #pageInfo { font-size: 13px; }
-  
-    
-    #favoritesView { margin-top: 16px; }
-    #favoritesView h2 { font-size: 18px; margin: 0 0 8px; }
-    .fav-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 10px;
-    }
-    .fav-list li { padding: 10px; border-radius: 12px; }
-  
-    
-    dialog#modal {
-      width: 100vw; height: 100dvh; margin: 0; padding: 16px;
-      border: none; border-radius: 0;
-    }
-    dialog#modal::backdrop { background: rgba(0,0,0,.6); }
-    #modal article img { max-width: 45vw; height: auto; border-radius: 10px; display: block; margin: 0 0 10px auto; }
-    #modal form button { width: 100%; padding: 12px; border-radius: 12px; }
-  
-    
-    button, input { min-height: 44px; }
-  } */
-
-
-/*   
-@media (max-width: 600px) {
-    
-    dialog#modal{
-      width: 100vw;
-      height: 100dvh;
-      margin: 0;
-      padding: 0;             
-      border: none;
-      border-radius: 0;
-      background: var(--bg, #0f1115);
-      color: var(--fg, #e8eef6);
-      display: flex;
-      flex-direction: column;
-    }
-    dialog#modal::backdrop{ background: rgba(0,0,0,.6); }
-  
-   
-    #modal article{
-      padding: 16px;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
+    /* пагинация – два равни бутона */
+    .pager{ gap: 8px; justify-content: center; }
+    .next, .prev{
+      width: 48%;
+      min-width: 0;
+      height: 44px;
     }
   
-    
-    #modal article img{
-      display: block;
-      margin: 0 auto 12px;
-      width: 46vw;               
-      max-width: 240px;
-      aspect-ratio: 2 / 3;       
-      height: auto;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #0b0d10;
-      box-shadow: 0 10px 24px rgba(0,0,0,.35);
-    }
-  
-    
-    #modal h3{
-      font-size: 18px;
-      line-height: 1.25;
-      margin: 6px 0 8px;
-      word-break: break-word;
-    }
-    #modal p{
-      margin: 8px 0;
-      font-size: 14px;
-    }
-    #modal p strong{
-      color: var(--muted, #93a1b3);
-      font-weight: 600;
-      margin-right: 6px;
-    }
-  
-    
-    #modal p:nth-of-type(n+3){   
-      line-height: 1.55;
-    }
-   
-    #modal .plot{
-      display: -webkit-box;
-      -webkit-line-clamp: 6;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    
-    #modal .plot.expanded{
-      -webkit-line-clamp: unset;
-      max-height: none;
-    }
-  
-    
-    #modal form button{
-      width: 100%;
-      padding: 12px;
-      margin: 10px 16px 16px;
-      border-radius: 12px;
-      border: 0;
-      background: #2a2f3a;
-      color: #fff;
+    /* удобни touch размери */
+    button, .clear, .search-btn, .learn, .result-btn, .favorites-btn{
       min-height: 44px;
-      font-size: 15px;
-    }
-  
-    
-    #modal .chips{
-      display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px;
-    }
-    #modal .chip{
-      padding: 6px 10px; border-radius: 999px; background: #1b1f27; font-size: 12px;
-    }
-  
-   
-    #modal .stats{
-      display: grid; gap: 8px; grid-template-columns: 1fr 1fr; margin: 10px 0 14px;
-    }
-    @media (max-width: 390px) {
-      #modal .stats{ grid-template-columns: 1fr; }
     }
   }
-   */
+  
+  /* (по желание) ТОЧНО iPhone 13 портрет – фини настройки
+     390 CSS px ширина @3x DPR */
+  @media only screen and (device-width: 390px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    body{ background-size: 180px auto; } /* още по-малко лого/фон */
+  }
+  
