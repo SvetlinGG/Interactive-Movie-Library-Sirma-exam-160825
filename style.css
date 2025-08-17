@@ -26,7 +26,8 @@ h1 {
     color: rgb(156, 42, 42);
     font-family: var(--font-base);
 }
-.clear, .search-btn, .learn, .result-btn, .favorites-btn{
+.clear, .search-btn, .learn, .result-btn, .favorites-btn,
+.next, .prev{
     height: 3em;
     width: 10em;
     background-color: black;
