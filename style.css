@@ -14,7 +14,6 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;              /* key line: always cover */
-    background-color: #000; 
 }
 .logo {
     display: flex;
