@@ -98,7 +98,7 @@ button:hover{filter:brightness(1.06)}
 
 
 
-   @media (max-width: 1170px) and (min-width: 601px) {
+   @media (max-width: 1170px) and (min-width: 500px) {
     
     :root { --radius: 14px; }
   
