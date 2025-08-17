@@ -3,7 +3,7 @@
     --bg: white; 
     --fg:#e8eef6; 
     --muted:#93a1b3; 
-    --card: ;
+    --text-color: rgb(156, 42, 42);
 }
 html, body {
     height: 100%;
@@ -12,8 +12,7 @@ body {
     margin: 0;
     background-image: url(/public/dart_vader.png);
     min-height: 100dvh;
-    background-repeat: no-repeat;
-    /* background-position: center center; */
+    background-repeat: repeat;
     background-size: cover;
                  
 }
@@ -30,7 +29,7 @@ body {
 }
 
 h1 {
-    color: rgb(156, 42, 42);
+    color: var(--text-color);
     font-family: var(--font-base);
 }
 .clear, .search-btn, .learn, .result-btn, .favorites-btn,
@@ -46,7 +45,7 @@ h1 {
 
 .material-symbols-outlined {
   color: white;
-  background-color: rgb(156, 42, 42);
+  background-color: var(--text-color);
   margin-left: 2em;
   border: 1px solid white;
   height: 30px;
