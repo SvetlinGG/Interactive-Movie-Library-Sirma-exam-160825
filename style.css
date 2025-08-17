@@ -5,10 +5,16 @@
     --muted:#93a1b3; 
     --card: ;
 }
-
+html, body {
+    height: 100%;
+}
 body {
     margin: 0;
     background-image: url(/public/dart_vader.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;              /* key line: always cover */
+    background-color: #000; 
 }
 .logo {
     display: flex;
@@ -99,7 +105,7 @@ button:hover{filter:brightness(1.06)}
         background-image: url(/public/dart_vader.png);
         background-size: 100vw auto;
         background-size: 100vh auto;
-        background-position: top center;
+        /* background-position: top center; */
     }
   
     .wrap { max-width: 1100px; padding: 16px; }
