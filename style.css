@@ -11,9 +11,7 @@ html, body {
 body {
     margin: 0;
     background-image: url(/public/dart_vader.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;              /* key line: always cover */
+                 
 }
 .logo {
     display: flex;
