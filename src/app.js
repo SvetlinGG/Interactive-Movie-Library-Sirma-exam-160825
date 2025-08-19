@@ -208,17 +208,17 @@ function renderFavorites(){
   el.showFavsBtn.addEventListener('click', showFavsMode);
   el.clearFavsBtn.addEventListener('click', () => { state.favs = []; saveFavs(); renderFavorites(); });
   
-  el.helpBtn.addEventListener('click', () => {
-    el.modalContent.innerHTML = `
-      <h3>How to use</h3>
-      <ol>
-        <li>Type a movie name and press <em>Search</em>.</li>
-        <li>Open <em>Details</em> on any card.</li>
-        <li>Use the ☆ to add/remove favorites; view them in <em>Favorites</em>.</li>
-      </ol>
-    `;
-    if (!el.modal.open) el.modal.showModal();
-  });
+  // el.helpBtn.addEventListener('click', () => {
+  //   el.modalContent.innerHTML = `
+  //     <h3>How to use</h3>
+  //     <ol>
+  //       <li>Type a movie name and press <em>Search</em>.</li>
+  //       <li>Open <em>Details</em> on any card.</li>
+  //       <li>Use the ☆ to add/remove favorites; view them in <em>Favorites</em>.</li>
+  //     </ol>
+  //   `;
+  //   if (!el.modal.open) el.modal.showModal();
+  // });
   
   
   state.q = '';
