@@ -150,7 +150,7 @@ button:hover{filter:brightness(1.06)}
       gap: 8px;
     }
   
-    /* карта/решетка – 2–4 колони според ширината */
+    
     .grid{
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 14px;
@@ -161,7 +161,7 @@ button:hover{filter:brightness(1.06)}
     }
     .poster{ object-fit: cover; }
   
-    /* пагинация */
+    
     .pager{ gap: 10px; }
     .next, .prev{
       width: auto;
@@ -172,13 +172,11 @@ button:hover{filter:brightness(1.06)}
     }
   }
   
-  /* =========================
-     ТЕЛЕФОНИ / iPhone 13 (≤600px)
-     ========================= */
+  
   @media (max-width: 600px) {
     :root { --radius: 14px; }
   
-    /* фонът става още по-малък и по-центриран */
+    
     body{
       background-repeat: no-repeat;
       background-position: top center;
@@ -186,7 +184,7 @@ button:hover{filter:brightness(1.06)}
       background-color: #fff;
     }
   
-    /* хедър в една колона */
+    
     .logo{
       gap: 8px;
       flex-direction: column;
@@ -198,7 +196,7 @@ button:hover{filter:brightness(1.06)}
       height: 28px; width: 32px; padding-top: 4px;
     }
   
-    /* търсене на един стълб – всичко 100% ширина */
+    
     .search{
       display: grid;
       grid-template-columns: 1fr;
@@ -217,7 +215,7 @@ button:hover{filter:brightness(1.06)}
       border-radius: 10px;
     }
   
-    /* Result / Favorites – 2 колони */
+   
     .result{
       margin-left: 0;
       display: grid;
@@ -231,7 +229,7 @@ button:hover{filter:brightness(1.06)}
       border-radius: 10px;
     }
   
-    /* решетка: 1–2 колони */
+    
     .grid{
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 12px;
@@ -241,7 +239,7 @@ button:hover{filter:brightness(1.06)}
     .title{ font-size: 16px; }
     .sub{ font-size: 12px; }
   
-    /* пагинация – два равни бутона */
+    
     .pager{ gap: 8px; justify-content: center; }
     .next, .prev{
       width: 48%;
@@ -249,15 +247,14 @@ button:hover{filter:brightness(1.06)}
       height: 44px;
     }
   
-    /* удобни touch размери */
+    
     button, .clear, .search-btn, .learn, .result-btn, .favorites-btn{
       min-height: 44px;
     }
   }
   
-  /* (по желание) ТОЧНО iPhone 13 портрет – фини настройки
-     390 CSS px ширина @3x DPR */
-  @media only screen and (device-width: 390px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
-    body{ background-size: 180px auto; } /* още по-малко лого/фон */
-  }
+  
+  /* @media only screen and (device-width: 390px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    body{ background-size: 180px auto; } 
+  } */
   
