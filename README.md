@@ -4,7 +4,7 @@ Interactive Movie Library
 
 Search movies, view details, paginate results, and save favorites — all in a single-page app built with HTML, CSS, and JavaScript using the OMDb API.
 
-Live demo: https://active-movie-library.netlify.app
+Live demo: https://interactive-movie-library.netlify.app/
 Tech: Vanilla JS · OMDb API · Responsive CSS (desktop, tablet ≤1170px, phones ≤600px) · LocalStorage
 
 Features
