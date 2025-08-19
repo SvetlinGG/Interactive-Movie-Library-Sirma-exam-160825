@@ -142,7 +142,7 @@ button:hover{
 
 
 
-   @media (max-width: 1170px) and (min-width: 500px) {
+   @media (max-width: 1170px) and (min-width: 600px) {
     
     :root { --radius: 14px; }
   
