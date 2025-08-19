@@ -218,8 +218,8 @@ button:hover{
   }
   
   
-  @media (max-width: 600px) {
-    :root { --radius: 14px; }
+  /* @media (max-width: 600px) { */
+    /* :root { --radius: 14px; }
   
     
     body{
@@ -296,7 +296,7 @@ button:hover{
     button, .clear, .search-btn, .learn, .result-btn, .favorites-btn{
       min-height: 44px;
     }
-  }
+  } */
   
   
   /* @media only screen and (device-width: 390px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
