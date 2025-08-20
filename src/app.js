@@ -145,10 +145,10 @@ async function openDetails(id){
             `;
 
     } catch (e) {
-        el.modalContent.innerHTML = `<p role="alert">Error: ${e.message}</p>`
+        el.modalContent.innerHTML = `<h1>Page Not Found</h1>`
     }
 }
-
+//<p role="alert">Error: ${e.message}</p>
 
 
 function renderFavorites(){
